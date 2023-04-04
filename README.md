@@ -18,50 +18,23 @@ A graphical representation of an argumentation procedure in a recommendation sce
 
 ![The major steps CA-FATA](https://github.com/anonymouscodeforpaper/CA_FATA/blob/main/figures/framework.png)
 
-### Installing
+## Installing
 
 * How/where to download your program
 * Any modifications needed to be made to files/folders
 
-### Executing program
+## Executing codes
 
-* How to run the program
-* Step-by-step bullets
+
+
+* On the Frappe dataset
+
 ```
-code blocks for commands
+python3 main.py --name 'Frappe' --e_epochs 100 --dim 256 --batch_size 256 --l2_weight 5e-5 --lr 5e-3 --context_or True --average_or True
+```
+*On the Yelp dataset
+```
+python3 main.py --name 'Yelp' --e_epochs 100 --dim 16 --batch_size 4096 --l2_weight 1e-3 --lr 5e-2 --context_or True --average_or True
 ```
 
-## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
