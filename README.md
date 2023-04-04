@@ -25,7 +25,7 @@ A graphical representation of an argumentation procedure in a recommendation sce
 
 ## Executing codes
 
-
+* name controls the selection of dataset, n_epochs defines the number of epochs, dim is the dimension of embedding, l2_weight is the regularization rate, lr is the learning rate, context_or = True means that users' contexts are considered, average_or = True means that the importance of features is considered.
 
 * On the Frappe dataset
 
