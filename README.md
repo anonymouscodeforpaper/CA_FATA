@@ -1,5 +1,5 @@
-# Project Title
-Implementation of Ca-FATA
+# CA-FATA
+Implementation of CA-FATA
 
 ## Description
 
