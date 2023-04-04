@@ -16,7 +16,7 @@ A graphical representation of an argumentation procedure in a recommendation sce
 
 ## Major steps
 
-![The major steps CA-FATA]([https://github.com/anonymouscodeforpaper/machine_learning/blob/master/zhuzhu.png](https://github.com/anonymouscodeforpaper/CA_FATA/blob/main/figures/framework.png))
+![The major steps CA-FATA](https://github.com/anonymouscodeforpaper/CA_FATA/blob/main/figures/framework.png)
 
 ### Installing
 
