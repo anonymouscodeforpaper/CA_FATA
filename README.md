@@ -10,8 +10,7 @@ it inherently interpretable. CA-FATA also easily integrates side information, su
 predictions.
 
 ## A toy example
-![A graphical representation of an argumentation procedure in a recommendation scenario. Each node represents an argument, at represents a feature of an item, the central node represents an argument “This item can be recommended to the target user”. The value on the arc denotes the strength and polarity of the argument, “+” denotes supports, “-” denotes attacks, and “0” denotes
-neutralizes. ](https://github.com/anonymouscodeforpaper/CA_FATA/blob/main/figures/toy.png)
+![A graphical representation of an argumentation procedure in a recommendation scenario. Each node represents an argument, at represents a feature of an item, the central node represents an argument "This item can be recommended to the target user". The value on the arc denotes the strength and polarity of the argument, "+" denotes supports, "-" denotes attacks, and "0" denotes neutralizes. ](https://github.com/anonymouscodeforpaper/CA_FATA/blob/main/figures/toy.png)
 
 ### Dependencies
 
