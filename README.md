@@ -1,15 +1,67 @@
-# CA_FATA
-The implementation of CA_FATA
-# A toy example
-\begin{tikzpicture}
-\node[circle,draw,text = green] (a) at (7,1) {at1};
-\node[circle,draw,text = red] (b) at (10,-2) {at2};
-\node[circle,draw] (c) at (13,1) {at3};
-\node[circle,draw,text=black,fill=lightgray] (d) at (10,0) {item};
-\draw[green,->,thick] (a) to [in = 120, out  = -120] (d);
-\node[text = green] at (8.5,0.90) {+0.52};
-\draw[red,->,thick] (b) -- (d);
-\node[text = red] at (10.4,-1) {-0.11};
-\node at (11.5,0.7) {0};
-\draw[->,thick] (c) to [in = 90, out  = -120] (d);
-\end{tikzpicture} 
+# Project Title
+Implementation of Ca-FATA
+
+## Description
+
+In this paper we propose CA-FATA, context-aware features attribution through argumentation. Our framework harnesses the power
+of argumentation by treating each feature as an argument that can either support, attack or neutralize a prediction. Additionally,
+CA-FATA formulates feature attribution as an argumentation procedure, and each computation has explicit semantics, which makes
+it inherently interpretable. CA-FATA also easily integrates side information, such as users’ contexts, resulting in more accurate
+predictions.
+
+## A toy example
+![A graphical representation of an argumentation procedure in a recommendation scenario. Each node represents an argument, at represents a feature of an item, the central node represents an argument “This item can be recommended to the target user”. The value on the arc denotes the strength and polarity of the argument, “+” denotes supports, “-” denotes attacks, and “0” denotes
+neutralizes. ](https://github.com/anonymouscodeforpaper/CA_FATA/blob/main/figures/toy.png)
+
+### Dependencies
+
+* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* ex. Windows 10
+
+### Installing
+
+* How/where to download your program
+* Any modifications needed to be made to files/folders
+
+### Executing program
+
+* How to run the program
+* Step-by-step bullets
+```
+code blocks for commands
+```
+
+## Help
+
+Any advise for common problems or issues.
+```
+command to run if program contains helper info
+```
+
+## Authors
+
+Contributors names and contact info
+
+ex. Dominique Pizzie  
+ex. [@DomPizzie](https://twitter.com/dompizzie)
+
+## Version History
+
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
