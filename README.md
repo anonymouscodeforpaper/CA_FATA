@@ -13,7 +13,9 @@ A graphical representation of an argumentation procedure in a recommendation sce
 ## Major steps
 
 ![The major steps CA-FATA](https://github.com/anonymouscodeforpaper/CA_FATA/blob/main/figures/framework.png)
-
+## Structure of files
+* data file contains the data used to generate results, to generate the training and the test set, please refer to the data_processing_frappe.ipynb for the Frappe dataset and data_processing_yelp.ipynb for the Yelp dataset
+* Figure files contains the toy example, major steps of CA-FATA and the cluster of the Frappe dataset. To generate the cluster, please refer to graph_frappe.ipynb for the Frappe dataset and graph_yelp.ipynb for the Yelp dataset.
 
 ## Executing codes
 
