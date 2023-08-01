@@ -33,7 +33,7 @@ class aggregator(nn.Module):
 
 
 class CA_FATA(nn.Module):
-    def __init__(self, n_users, n_contexts, n_rc, n_entity, n_kc, n_factors,context_or,average_or):
+    def __init__(self, n_users, n_contexts, n_rc, n_entity, n_kc, n_factors, context_or, average_or):
         super().__init__()
         self.user_factors = torch.nn.Embedding(n_users, n_factors)
         self.context_factors = torch.nn.Embedding(n_contexts, n_factors)
@@ -45,32 +45,32 @@ class CA_FATA(nn.Module):
         self.average_or = average_or
 
     def forward(self, user, contexts_index, entities_index):
-
         entities = self.entity_factors(entities_index)  # 128 * 5 * 64
         contexts = self.context_factors(contexts_index)  # 128 * 5 * 64
-        
-        
-        if self.context_or == True: ## Contexts are considered
-            u_nei = self.agg(self.user_factors(user), contexts,
-                    self.relation_c.weight)  # 128 * 1 * 64
-            u_final = u_nei + self.user_factors(user).unsqueeze(1) # 128 * 1 * 64
+
+        if self.context_or:
+            u_nei = self.agg(self.user_factors(user), contexts, self.relation_c.weight)  # 128 * 1 * 64
+            u_final = u_nei + self.user_factors(user)[:, 0].unsqueeze(1).unsqueeze(1) # 128 * 1 * 64
             u_final = leaky(u_final)
-        else: ## Not considering contexts
+        else:
             u_final = self.user_factors(user)
-        if self.average_or == True: ## Importance of feature importance
+
+        if self.average_or:
             importances = torch.matmul(u_final.squeeze(1), self.relation_k.weight) # 128 * 5
             importances = leaky(importances)
             m = torch.nn.Softmax(dim=1) # 128 * 5
             importances = m(importances) # 128 * 5
-            scores = torch.bmm(entities,u_final.squeeze(1).unsqueeze(2)) # 128 * 5 * 1
-            scores_final = torch.bmm(importances.unsqueeze(1),scores) # 128 * 1 * 1
-            scores_final = scores_final.squeeze(2) # 128 * 1
-            scores_final = scores_final.squeeze(1) # 128,
+            scores = torch.bmm(entities, u_final.squeeze(1).unsqueeze(2)) # 128 * 5 * 1
+            scores_final = torch.bmm(importances.unsqueeze(1), scores) # 128 * 1 * 1
+            scores_final.squeeze_(2) # 128 * 1
+            scores_final.squeeze_(1) # 128
         else:
-            scores = torch.bmm(entities,u_final.squeeze(1).unsqueeze(2))
+            scores = torch.bmm(entities, u_final.squeeze(1).unsqueeze(2))
             scores_final = scores.sum(1) / (entities_index.shape[1])
-            scores_final = scores_final.squeeze(1)
-        return scores_final 
+            scores_final.squeeze_(1)
+
+        return scores_final
+
           
     
 
